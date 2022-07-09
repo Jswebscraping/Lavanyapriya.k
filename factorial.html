@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Factorial </title>
+   </head>
+        <style>
+        body {
+            background-color:antiquewhite;
+            color:white;
+            
+          }
+          h2{
+              color: black;
+              font-size: larger;
+          }
+     </style>
+        <body>
+            <h2>Factorial number</h2>
+            <p id ="demo"></p>
+            <form>
+                <label for="Factorial number">Factorial number of:</label>
+                <input type="integer" id="number" name="number">
+                <button type="button" onclick="generate()">Click here</button>
+            </form>
+        <script>
+            function generate(){
+            var num=parseInt(prompt("Enter Factorial number"));
+            var fact=1;
+             for(var i=num;i>=1;i--)
+             {
+
+                fact=fact*i
+             }
+            
+             document.getElementById("demo").innerHTML = "The factorial number of given number is:" + fact ;
+            }
+        </script>
+        </body>
+        </html>
