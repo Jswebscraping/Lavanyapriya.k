@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>count odd or even </title>
+   </head>
+        <style>
+        body {
+            background-color:cornflowerblue;
+            color:white;
+            
+          }
+          h2{
+              color:white;
+              font-size: larger;
+          }
+        </style>
+        <body>
+            <h2>odd or even number</h2>
+            <script>
+                function countOdd( L, R){
+
+	let N = Math.floor((R - L) / 2);
+
+	// if either R or L is odd
+	if (R % 2 != 0 || L % 2 != 0)
+		N += 1;
+
+	return N;
+}
+let L = 3, R = 7;
+	let odds = countOdd(L, R);
+	let evens = (R - L + 1) - odds;
+	
+	document.write(
+	"Count of odd numbers is " + odds + "</br>");
+	document.write("Count of even numbers is " + evens + "</br>");
+	</script>
+    </body>
+    </html>
