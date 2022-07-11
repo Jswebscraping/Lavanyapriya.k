@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>prime</title>
+   </head>
+      <body>
+        <h2> count the Prime number </h2>
+        <script>
+
+let MAX = 10000;
+	let prefix = [];
+	
+function buildPrefix() {
+
+	let prime = [];
+	for (let p = 1; p <= MAX +1; p++) {
+		prime[p] = true;
+	}
+	
+	for (let p = 2; p * p <= MAX; p++) {
+	if (prime[p] == true) {
+		for (let i = p * 2; i <= MAX; i += p)
+		prime[i] = false;
+	}
+	}
+	
+	
+	prefix[0] = prefix[1] = 0;
+	for (let p = 2; p <= MAX; p++) {
+	prefix[p] = prefix[p - 1];
+	if (prime[p])
+		prefix[p]++;
+	}
+}
+	
+
+function query(L, R)
+{
+	return prefix[R] - prefix[L - 1];
+}
+
+	buildPrefix();
+	let L = 5, R = 10;
+	document.write(query(L, R) + "<br/>");
+	
+	L = 1; R = 10;
+	document.write(query(L, R));
+ </script>
+ </body>
+</html>
